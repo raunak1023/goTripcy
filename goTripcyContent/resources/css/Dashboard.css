@@ -1,0 +1,81 @@
+.width50 {
+	width: 50%;
+}
+
+.width80 {
+	width: 80%;
+}
+
+.searchBox {
+	border-radius: 5px;
+    border: 1px solid #A9A9A9;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    outline: none;
+    padding-left: 50px;
+    padding-top: 8px;
+    position: absolute;
+    color: #000 !important;
+}
+
+.searchBoxOther {
+	border-radius: 5px;
+    border: 1px solid #A9A9A9;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    outline: none;
+    position: absolute;
+    padding-left: 10px;
+    color: #000 !important;
+}
+
+.searchBox-active {
+	padding-top: 10px;
+}
+
+.locationSearch {
+    width: 45px;
+    position: absolute;
+    height: 50px;
+    z-index: 1;
+}
+
+.searchPaceholder {
+	z-index: 2;
+	position: absolute;
+	left: 20%;
+	font-size: 18px;
+	top: 15px;
+}
+
+.searchPaceholder-active {
+	z-index: 2;
+	position: absolute;
+	left: 20%;
+	font-size: 10px;
+	top: 0px;
+	font-weight: bold;
+}
+
+.searchIcon {
+	background-image: url("../images/icon/search_icon.png") !important;
+	background-position: 10px;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	height: 48px;
+	width: 50px;
+	margin-left: 10px;
+	background-color: #0162AA !important; 
+}
+
+.searchIcon:hover {
+	background-image: url("../images/icon/search_icon.png") !important;
+	background-position: 10px;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	height: 48px;
+	width: 50px;
+	background-color: #0162AA !important;
+}
