@@ -1353,7 +1353,6 @@ img.full-width {
 
 section#content {
   min-height: 400px;
-  padding-top: 40px;
   text-align: left;
   background: #f5f5f5;
 }
@@ -1374,8 +1373,8 @@ section#content:after {
 }
 
 .section {
-  padding-top: 80px;
   padding-bottom: 70px;
+  padding-top: 5%;
 }
 
 .small-box {
@@ -8230,9 +8229,9 @@ ul.search-tabs li.active a {
 }
 
 .search-tab-content {
-  padding: 30px 0;
-  min-height: 110px;
-  margin-left: 12%;
+  min-height: 500px;
+  background-image: url(../images/taj_mahal.jpg);
+  background-position: 
 }
 .search-tab-content .tab-pane {
   display: none;

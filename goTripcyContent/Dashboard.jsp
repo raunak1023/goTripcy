@@ -54,7 +54,7 @@
       <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
 </head>
-<body>
+<body onload="onLoad();">
     
     <div id="page-wrapper">
         <header id="header" class="navbar-static-top">
@@ -753,24 +753,7 @@
                             <li><a href="#online-checkin-tab">ONLINE CHECK IN</a></li>
                         </ul>
                     </div>
-                    <div class="search-tab-content width80">
-                    	<div class="row">
-                    		<div class="col-md-4">
-                    			<span><img src="resources/images/icon/location_search.png" class="locationSearch"></span>
-                    			<input id="locationSearchInpt" onfocus="searchOnFocus(this);" onblur="searchOnBlur(this);" type="text" class="searchBox"/>
-                    			<span><label id="PaceholderId" class="searchPaceholder">I want to go</label></span>
-                    		</div>
-                    		<div class="col-md-4">
-                    			<input type="text" class="searchBoxOther" placeholder="Going to"/>
-                    		</div>
-                    		<div class="col-md-2">
-                    			<input type="text" class="searchBoxOther" placeholder="Month of Travel"/>
-                    		</div>
-                    		<div class="col-md-2">
-                    			<button class="searchIcon"></button>
-                    		</div>
-                    	</div>
-                    </div>
+                    
                     <div class="search-tab-content displayNone">
                         <div class="tab-pane fade active in" id="hotels-tab">
                             <form action="hotel-list-view.html" method="post">
@@ -1326,10 +1309,41 @@
             </div>
             
         <section id="content">
-            
-            
+        	<div class="search-tab-content">
+        		<div class="backgroundOpacity">
+        		</div>
+	        	<div class="row searchContentDiv">
+	          		<div class="col-md-4">
+	          			<span><img src="resources/images/icon/location_search.png" class="locationSearch"></span>
+	          			<input id="locationSearchInpt" onfocus="searchOnFocus(this);" onblur="searchOnBlur(this);" type="text" class="searchBox"/>
+	          			<span><label id="PaceholderId" class="searchPaceholder">I want to go</label></span>
+	          			<div class="wantToGoContent" id="wantToGoContent"></div>
+	          		</div>
+	          		<div class="col-md-4">
+         				<input type="text" class="searchBoxOther" placeholder="Going to" onmouseout="hideDiv('goingToContent', 'goingToDD');" onmouseover="showDiv('goingToContent', 'goingToDD')"/>
+         				<img alt="Expand" src="resources/images/icon/Blue_Arrow_Expanded.png" class="expandCollapsImg" id="goingToDD"/>
+         				<div class="goingToContent" id="goingToContent" onmouseover="showDiv('goingToContent', 'goingToDD')" onmouseout="hideDiv('goingToContent', 'goingToDD');"></div>
+	          		</div>
+	          		<div class="col-md-2">
+	          			<input type="text" class="searchBoxOther" placeholder="Month of Travel" onmouseout="hideDiv('monthContent', 'monthDD');" onmouseover="showDiv('monthContent', 'monthDD')"/>
+	          			<img alt="Expand" src="resources/images/icon/Blue_Arrow_Expanded.png" class="expandCollapsImg" id="monthDD"/>
+	          			<div class="monthContent" id="monthContent" onmouseout="hideDiv('monthContent', 'monthDD');" onmouseover="showDiv('monthContent', 'monthDD')"></div>
+	          		</div>
+	          		<div class="col-md-2">
+	          			<button class="searchIcon"></button>
+	          		</div>
+	            </div>
+	            <div class=orContainer>
+	            	<span class="orTxt">OR</span>
+	            </div>
+	            <div class="searchByDestContainer">
+	            	<div class="searchByDest">
+	            		<span>Search By Popular Destinations</span>
+	            	</div>
+	            </div>
+            </div>
             <div class="section container">
-                <h2>Popular Cruise Deals</h2>
+                <h2>Popular Indian Tour</h2>
                 <div class="row image-box style3">
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
@@ -1397,6 +1411,77 @@
                     </div>
                 </div>
             </div>
+            
+            <div class="section container">
+                <h2>Popular International Tour</h2>
+                <div class="row image-box style3">
+                    <div class="col-sms-6 col-sm-6 col-md-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
+                                <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+                            </figure>
+                            <div class="details text-center">
+                                <h4 class="box-title">Greece</h4>
+                                <p class="offers-content">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                    <span style="width: 80%;" class="five-stars"></span>
+                                </div>
+                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+                                <a class="button" href="cruise-detailed.html">SEE ALL</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sms-6 col-sm-6 col-md-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
+                                <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+                            </figure>
+                            <div class="details text-center">
+                                <h4 class="box-title">Singapore</h4>
+                                <p class="offers-content">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                    <span style="width: 80%;" class="five-stars"></span>
+                                </div>
+                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+                                <a class="button" href="cruise-detailed.html">SEE ALL</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sms-6 col-sm-6 col-md-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
+                                <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+                            </figure>
+                            <div class="details text-center">
+                                <h4 class="box-title">Malaysia</h4>
+                                <p class="offers-content">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                    <span style="width: 80%;" class="five-stars"></span>
+                                </div>
+                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+                                <a class="button" href="cruise-detailed.html">SEE ALL</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sms-6 col-sm-6 col-md-3">
+                        <article class="box">
+                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
+                                <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
+                            </figure>
+                            <div class="details text-center">
+                                <h4 class="box-title">Europe</h4>
+                                <p class="offers-content">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
+                                    <span style="width: 80%;" class="five-stars"></span>
+                                </div>
+                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
+                                <a class="button" href="cruise-detailed.html">SEE ALL</a>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+            </div>
+            
             <div class="global-map-area section parallax" data-stellar-background-ratio="0.5">
                 <div class="container">
                     <div class="text-center description">
@@ -1451,7 +1536,7 @@
                     </div>
                 </div>
             </div>
-            <div class="section container">
+            <div class="sectionTrending container">
                 <h2>Popular Hotels</h2>
                 <div class="row image-box hotel listing-style1">
                     <div class="col-sms-6 col-sm-6 col-md-3">
@@ -1704,6 +1789,8 @@
     <script type="text/javascript" src="resources/js/theme-scripts.js"></script>
     <script type="text/javascript" src="resources/js/scripts.js"></script>
     <script type="text/javascript" src="resources/js/Dashboard.js"></script>
+    <script type="text/javascript" src="resources/js/jzip.js"></script>
+    <script type="text/javascript" src="resources/js/xlsx.js"></script>
     
     <script type="text/javascript">
         tjq(document).ready(function() {
