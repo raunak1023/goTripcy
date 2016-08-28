@@ -1309,35 +1309,36 @@
             </div>
             
         <section id="content">
-        	<div class="search-tab-content">
-        		<div class="backgroundOpacity">
+        	<div id="search-tab-content-id" class="search-tab-content">
+        		<div id="backgroundOpacityId" class="backgroundOpacity">
         		</div>
 	        	<div class="row searchContentDiv">
-	          		<div class="col-md-4">
+	          		<div class="col-md-4 col-xs-3">
 	          			<span><img src="resources/images/icon/location_search.png" class="locationSearch"></span>
-	          			<input id="locationSearchInpt" onfocus="searchOnFocus(this);" onblur="searchOnBlur(this);" type="text" class="searchBox"/>
+	          			<input id="locationSearchInpt" onfocus="searchOnFocus(this);" onblur="searchOnBlur(this);" type="text" class="searchBox" onmouseout="hideDiv('wantToGoContent', 'wantTogoDD');" onmouseover="showDiv('wantToGoContent', 'wantTogoDD')" onkeyup="filterAry('locationSearchInpt', 'location');"/>
 	          			<span><label id="PaceholderId" class="searchPaceholder">I want to go</label></span>
-	          			<div class="wantToGoContent" id="wantToGoContent"></div>
+	          			<img alt="Expand" src="resources/images/icon/Blue_Arrow_Expanded.png" class="expandCollapsImg" id="wantTogoDD"/>
+	          			<div class="wantToGoContent" id="wantToGoContent" onmouseout="hideDiv('wantToGoContent', 'wantTogoDD');" onmouseover="showDiv('wantToGoContent', 'wantTogoDD')"></div>
 	          		</div>
-	          		<div class="col-md-4">
-         				<input type="text" class="searchBoxOther" placeholder="Going to" onmouseout="hideDiv('goingToContent', 'goingToDD');" onmouseover="showDiv('goingToContent', 'goingToDD')"/>
-         				<img alt="Expand" src="resources/images/icon/Blue_Arrow_Expanded.png" class="expandCollapsImg" id="goingToDD"/>
-         				<div class="goingToContent" id="goingToContent" onmouseover="showDiv('goingToContent', 'goingToDD')" onmouseout="hideDiv('goingToContent', 'goingToDD');"></div>
+	          		<div class="col-md-4 col-xs-3">
+         				<input id="goingFrmInput" type="text" class="searchBoxOther" placeholder="Leaving From" onmouseout="hideDiv('goingFrmContent', 'goingFrmDD');" onmouseover="showDiv('goingFrmContent', 'goingFrmDD');" onkeyup="filterAry('goingFrmInput', 'goingFrm');"/>
+         				<img alt="Expand" src="resources/images/icon/Blue_Arrow_Expanded.png" class="expandCollapsImg" id="goingFrmDD"/>
+         				<div class="goingFrmContent" id="goingFrmContent" onmouseover="showDiv('goingFrmContent', 'goingFrmDD')" onmouseout="hideDiv('goingFrmContent', 'goingFrmDD');"></div>
 	          		</div>
-	          		<div class="col-md-2">
-	          			<input type="text" class="searchBoxOther" placeholder="Month of Travel" onmouseout="hideDiv('monthContent', 'monthDD');" onmouseover="showDiv('monthContent', 'monthDD')"/>
+	          		<div class="col-md-2 col-xs-3">
+	          			<input id="monthInput" type="text" class="searchBoxOther" placeholder="Month of Travel" onmouseout="hideDiv('monthContent', 'monthDD');" onmouseover="showDiv('monthContent', 'monthDD')" onkeyup="filterAry('monthInput', 'month');"/>
 	          			<img alt="Expand" src="resources/images/icon/Blue_Arrow_Expanded.png" class="expandCollapsImg" id="monthDD"/>
 	          			<div class="monthContent" id="monthContent" onmouseout="hideDiv('monthContent', 'monthDD');" onmouseover="showDiv('monthContent', 'monthDD')"></div>
 	          		</div>
-	          		<div class="col-md-2">
+	          		<div class="col-md-2 col-xs-3">
 	          			<button class="searchIcon"></button>
 	          		</div>
 	            </div>
-	            <div class=orContainer>
-	            	<span class="orTxt">OR</span>
+	            <div class="row orContainer">
+	            	<span class="col-md-12 col-xs-12 orTxt">OR</span>
 	            </div>
-	            <div class="searchByDestContainer">
-	            	<div class="searchByDest">
+	            <div class="row searchByDestContainer">
+	            	<div class="col-md-12 col-xs-12 searchByDest searchByDestIcon">
 	            		<span>Search By Popular Destinations</span>
 	            	</div>
 	            </div>

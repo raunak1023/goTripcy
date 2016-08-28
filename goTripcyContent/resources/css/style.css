@@ -8231,7 +8231,7 @@ ul.search-tabs li.active a {
 .search-tab-content {
   min-height: 500px;
   background-image: url(../images/taj_mahal.jpg);
-  background-position: 
+  transition: visibility 1s, opacity 0.5s linear;
 }
 .search-tab-content .tab-pane {
   display: none;

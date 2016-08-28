@@ -8,7 +8,7 @@
 
 .searchContentDiv {
 	padding-left: 11%;
-	padding-top: 8%;
+	padding-top: 10%;
 	height: 112px;
 }
 
@@ -50,13 +50,11 @@
     margin-top: 51px;
     background: #fff;
 }
-.goingToContent, .wantToGoContent, .monthContent {
+.goingFrmContent, .wantToGoContent, .monthContent {
 	border-radius: 5px;
     border: 1px solid #A9A9A9;
     width: 100%;
-    max-height: 200px;
     font-size: 18px;
-    height: 200px;
     outline: none;
     position: absolute;
     padding-left: 10px;
@@ -65,6 +63,11 @@
     background: #fff;
     z-index: 1;
     display: none;
+    overflow-y: scroll;
+}
+
+.leavingCnt {
+	max-height: 200px;
 }
 
 .searchBox-active {
@@ -81,7 +84,7 @@
 .searchPaceholder {
 	z-index: 2;
 	position: absolute;
-	left: 14%;
+	left: 60px;
 	font-size: 17px;
 	top: 15px;
 }
@@ -89,7 +92,7 @@
 .searchPaceholder-active {
 	z-index: 2;
 	position: absolute;
-	left: 16%;
+	left: 60px;
 	font-size: 12px;
 	top: 0px;
 	font-weight: bold;
@@ -138,6 +141,12 @@
     color: #666;
     font: bold 16px/30px 'LatoWebLight', Arial, Helvetica, sans-serif;
     display: inline-block;
+    float: none;
+    padding-left: 4px;
+	top: 5%;
+	right: 0;
+	bottom: 0;
+	left: 0;
 }
 
 .searchByDestContainer {
@@ -172,5 +181,25 @@
     opacity: 0.5;
     position: absolute;
     margin-left: 6%;
-    margin-top: 3%;
+    margin-top: 4%;
+}
+
+.contentCls {
+    height: 30px;
+    margin-top: 10px;
+    border-bottom: 1px solid grey;
+    margin-left: -10px;
+}
+
+.lableCtnt {
+	margin-left: 15px;
+	cursor: pointer;	
+}
+
+.searchByDestIcon {
+	background-image: url("../images/icon/search_icon.png") !important;
+	background-position: 10px;
+	background-repeat: no-repeat;
+	border-radius: 5px;
+	height: 32px;
 }

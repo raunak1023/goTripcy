@@ -13,7 +13,7 @@ function searchOnBlur(ele) {
 }
 
 function showDiv(divId, imgId){
-	document.getElementById(divId).style.display = 'inline';
+	document.getElementById(divId).style.display = 'block';
 	document.getElementById(imgId).src = 'resources/images/icon/Blue_Arrow_Collapsed.png';
 }
 
@@ -30,8 +30,7 @@ function to_json(workbook) {
             result[sheetName] = roa;
         }
     });
-    console.log(result);
-    return result;
+    loadDataToPage(result);
 }
 
 function onLoad() {
@@ -48,13 +47,80 @@ function onLoad() {
 	  var arr = new Array();
 	  for(var i = 0; i != data.length; ++i) arr[i] = String.fromCharCode(data[i]);
 	  var bstr = arr.join("");
-
-	  /* Call XLSX */
 	  var workbook = XLSX.read(bstr, {type:"binary"});
-
-	  /* DO SOMETHING WITH workbook HERE */
 	  to_json(workbook);
 	}
-
 	oReq.send();
+}
+
+var wantToGoAry = new Array();
+var goingFrmAry = new Array();
+var monthAry = new Array();
+function loadDataToPage(result) {
+	var data = result.Sheet1;
+	var dataLen = data.length;
+	var going = "<div class='leavingCnt'>";
+	var leaving = "<div class='leavingCnt'>";
+	var month = "<div class='leavingCnt'>";
+	for(var res = 0;res < dataLen; res++){
+		if(data[res].Going != undefined){
+			going = going + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"locationSearchInpt\", \""+data[res].Going+"\");'>" + data[res].Going + "</div></div>";
+			wantToGoAry.push(data[res].Going);
+		}
+		if(data[res].Leaving != undefined){
+			leaving = leaving + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"goingFrmInput\", \""+data[res].Leaving+"\");'>" + data[res].Leaving + "</div></div>";
+			goingFrmAry.push(data[res].Leaving);
+		}
+		if(data[res].Month != undefined){
+			month = month + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"monthInput\", \""+data[res].Month+"\");'>" + data[res].Month + "</div></div>";
+			monthAry.push(data[res].Month);
+		}
+	}
+	going = going + "</div>";
+	leaving = leaving + "</div>";
+	month = month + "</div>";
+
+	document.getElementById("wantToGoContent").innerHTML = going;
+	document.getElementById("goingFrmContent").innerHTML = leaving;
+	document.getElementById("monthContent").innerHTML = month;
+}
+
+function filterAry(inputId, searchType) {
+	var ary, id;
+	if(searchType == 'location') {
+		ary = wantToGoAry;
+		id = 'wantToGoContent';
+	} else if(searchType == 'goingFrm') {
+		ary = goingFrmAry;
+		id = 'goingFrmContent';
+	} else if (searchType == 'month'){
+		ary = monthAry;
+		id = 'monthContent';
+	}
+	var filterVal = document.getElementById(inputId).value;
+	filterVal = filterVal.toUpperCase();
+	var filteredNames = ary.filter(function(word) {
+		word = word.toUpperCase();
+       return word.includes(filterVal);
+    });
+	syncArray(id, filteredNames, inputId);
+}
+function syncArray(id, ary, inputId) {
+	var aryLen = ary.length;
+	var content = "<div class='leavingCnt'>";
+	for(var index = 0;index < aryLen; index++){
+		if(ary[index] != undefined){
+			content = content + "<div class='contentCls'><div class='lableCtnt' onClick ='selectVal(\"" + inputId + "\",\""+ ary[index] +"\")'>" + ary[index] + "</div></div>";
+		}
+	}
+	content = content + "</div>";
+	var contentDOM = document.getElementById(id);
+	contentDOM.innerHTML = '';
+	contentDOM.innerHTML = content;
+}
+function selectVal(id, val) {
+	document.getElementById(id).value = val; 
+	if(id == "locationSearchInpt"){
+		searchOnFocus();
+	}
 }
