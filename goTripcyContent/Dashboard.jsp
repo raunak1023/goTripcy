@@ -1343,70 +1343,90 @@
 	            	</div>
 	            </div>
             </div>
-            <div class="section container">
-                <h2>Popular Indian Tour</h2>
+            <div class="section container" style="padding-bottom: 0px;">
+                <h2>International Pakages</h2>
                 <div class="row image-box style3">
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Greece</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
+                            <img id="pkg_out_img_1" class="pak_img" width="270" height="160" alt="" src="">
+                            <div class="details">
+                                <span class="price">
+                                    <small>Starting From</small>
+                                    <label class="fa fa-inr" id="pkg_out_price_1"></label>
+                                </span>
+                                <h4 id="pkg_out_head_1" class="box-title"></h4>
+                                <p class="offers-content displayNone">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container displayNone">
+                                    <span style="width: 80%;" class="five-stars displayNone"></span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
-                                <a class="button" href="cruise-detailed.html">SEE ALL</a>
+                                <p id="pkg_out_desc_1" class="description"></p>
+                                <div class="action">
+                                    <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
+                                    <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
+                                </div>
                             </div>
                         </article>
                     </div>
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.4">
-                                <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Singapore</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
+                            <img id="pkg_out_img_2" class="pak_img" width="270" height="160" alt="" src=""/>
+                            <div class="details">
+                            	<span class="price">
+                                    <small>Starting From</small>
+                                    <label class="fa fa-inr" id="pkg_out_price_2"></label>
+                                </span>
+                                <h4 id="pkg_out_head_2" class="box-title"></h4>
+                                <p class="offers-content displayNone">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container displayNone">
+                                    <span style="width: 80%;" class="five-stars displayNone"></span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
-                                <a class="button" href="cruise-detailed.html">SEE ALL</a>
+                                <p id="pkg_out_desc_2" class="description"></p>
+                                <div class="action">
+                                    <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
+                                    <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
+                                </div>
                             </div>
                         </article>
                     </div>
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.8">
-                                <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Malaysia</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
+                            <img id="pkg_out_img_3" class="pak_img" width="270" height="160" alt="" src=""/>
+                            <div class="details">
+                            	<span class="price">
+                                    <small>Starting From</small>
+                                    <label class="fa fa-inr" id="pkg_out_price_3"></label>
+                                </span>
+                                <h4 id="pkg_out_head_3" class="box-title"></h4>
+                                <p class="offers-content displayNone">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container displayNone">
+                                    <span style="width: 80%;" class="five-stars displayNone"></span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
-                                <a class="button" href="cruise-detailed.html">SEE ALL</a>
+                                <p id="pkg_out_desc_3" class="description"></p>
+                                <div class="action">
+                                    <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
+                                    <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
+                                </div>
                             </div>
                         </article>
                     </div>
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-                                <a href="ajax/cruise-slideshow-popup.html" class="hover-effect popup-gallery"><img width="270" height="160" alt="" src="http://placehold.it/270x160"></a>
-                            </figure>
-                            <div class="details text-center">
-                                <h4 class="box-title">Europe</h4>
-                                <p class="offers-content">(15 deal offers)</p>
-                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container">
-                                    <span style="width: 80%;" class="five-stars"></span>
+                            <img id="pkg_out_img_4" class="pak_img" width="270" height="160" alt="" src=""/>
+                            <div class="details">
+                            	<span class="price">
+                                    <small>Starting From</small>
+                                    <label class="fa fa-inr" id="pkg_out_price_4"></label>
+                                </span>
+                                <h4 id="pkg_out_head_4" class="box-title"></h4>
+                                <p class="offers-content displayNone">(15 deal offers)</p>
+                                <div data-placement="bottom" data-toggle="tooltip" title="4 stars" class="five-stars-container displayNone">
+                                    <span style="width: 80%;" class="five-stars displayNone"></span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar.</p>
-                                <a class="button" href="cruise-detailed.html">SEE ALL</a>
+                                <p id="pkg_out_desc_4" class="description"></p>
+                                <div class="action">
+                                    <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
+                                    <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
+                                </div>
                             </div>
                         </article>
                     </div>
@@ -1414,7 +1434,7 @@
             </div>
             
             <div class="section container">
-                <h2>Popular International Tour</h2>
+                <h2>Indian Pakages</h2>
                 <div class="row image-box style3">
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">

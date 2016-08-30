@@ -1,3 +1,7 @@
+.displayNone {
+	display: none !important;
+}
+
 .width50 {
 	width: 50%;
 }
@@ -202,4 +206,9 @@
 	background-repeat: no-repeat;
 	border-radius: 5px;
 	height: 32px;
+}
+
+.pak_img {
+	width: 270px !important;
+	height: 160px !important;
 }

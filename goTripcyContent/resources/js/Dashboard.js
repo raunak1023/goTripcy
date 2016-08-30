@@ -34,7 +34,7 @@ function to_json(workbook) {
 }
 
 function onLoad() {
-	var url = "resources/excel/sample.xlsx";
+	var url = "resources/excel/data.xlsx";
 	var oReq = new XMLHttpRequest();
 	oReq.open("GET", url, true);
 	oReq.responseType = "arraybuffer";
@@ -57,23 +57,24 @@ var wantToGoAry = new Array();
 var goingFrmAry = new Array();
 var monthAry = new Array();
 function loadDataToPage(result) {
-	var data = result.Sheet1;
-	var dataLen = data.length;
+	var searchData = result.search;
+	var outboundData = result.outbound;
+	var searchDataLen = searchData.length;
 	var going = "<div class='leavingCnt'>";
 	var leaving = "<div class='leavingCnt'>";
 	var month = "<div class='leavingCnt'>";
-	for(var res = 0;res < dataLen; res++){
-		if(data[res].Going != undefined){
-			going = going + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"locationSearchInpt\", \""+data[res].Going+"\");'>" + data[res].Going + "</div></div>";
-			wantToGoAry.push(data[res].Going);
+	for(var res = 0;res < searchDataLen; res++){
+		if(searchData[res].Going != undefined){
+			going = going + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"locationSearchInpt\", \""+searchData[res].Going+"\");'>" + searchData[res].Going + "</div></div>";
+			wantToGoAry.push(searchData[res].Going);
 		}
-		if(data[res].Leaving != undefined){
-			leaving = leaving + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"goingFrmInput\", \""+data[res].Leaving+"\");'>" + data[res].Leaving + "</div></div>";
-			goingFrmAry.push(data[res].Leaving);
+		if(searchData[res].Leaving != undefined){
+			leaving = leaving + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"goingFrmInput\", \""+searchData[res].Leaving+"\");'>" + searchData[res].Leaving + "</div></div>";
+			goingFrmAry.push(searchData[res].Leaving);
 		}
-		if(data[res].Month != undefined){
-			month = month + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"monthInput\", \""+data[res].Month+"\");'>" + data[res].Month + "</div></div>";
-			monthAry.push(data[res].Month);
+		if(searchData[res].Month != undefined){
+			month = month + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"monthInput\", \""+searchData[res].Month+"\");'>" + searchData[res].Month + "</div></div>";
+			monthAry.push(searchData[res].Month);
 		}
 	}
 	going = going + "</div>";
@@ -83,6 +84,8 @@ function loadDataToPage(result) {
 	document.getElementById("wantToGoContent").innerHTML = going;
 	document.getElementById("goingFrmContent").innerHTML = leaving;
 	document.getElementById("monthContent").innerHTML = month;
+	
+	displayOutbound(outboundData);
 }
 
 function filterAry(inputId, searchType) {
@@ -122,5 +125,19 @@ function selectVal(id, val) {
 	document.getElementById(id).value = val; 
 	if(id == "locationSearchInpt"){
 		searchOnFocus();
+	}
+}
+
+function displayOutbound(outboundData){
+	var outboundDataLen = outboundData.length;
+	for(var index = 1;index <= outboundDataLen; index++){
+		var imageId = "pkg_out_img_"+index;
+		var headId = "pkg_out_head_"+index;
+		var descId = "pkg_out_desc_"+index;
+		var priceId = "pkg_out_price_"+index;
+		document.getElementById(imageId).src = "resources/images/pakages/" + outboundData[index-1].image + ".jpg";
+		document.getElementById(headId).innerHTML = outboundData[index-1].package_name + "<small class=''>"+ outboundData[index-1].cities_included +"</small>";
+		document.getElementById(descId).innerHTML = outboundData[index-1].inclusion;
+		document.getElementById(priceId).innerHTML = outboundData[index-1].price;
 	}
 }
