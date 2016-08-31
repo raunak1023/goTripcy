@@ -59,6 +59,7 @@ var monthAry = new Array();
 function loadDataToPage(result) {
 	var searchData = result.search;
 	var outboundData = result.outbound;
+	var inboundData = result.inbound;
 	var searchDataLen = searchData.length;
 	var going = "<div class='leavingCnt'>";
 	var leaving = "<div class='leavingCnt'>";
@@ -86,6 +87,8 @@ function loadDataToPage(result) {
 	document.getElementById("monthContent").innerHTML = month;
 	
 	displayOutbound(outboundData);
+	displayInbound(inboundData);
+	
 }
 
 function filterAry(inputId, searchType) {
@@ -136,8 +139,22 @@ function displayOutbound(outboundData){
 		var descId = "pkg_out_desc_"+index;
 		var priceId = "pkg_out_price_"+index;
 		document.getElementById(imageId).src = "resources/images/pakages/" + outboundData[index-1].image + ".jpg";
-		document.getElementById(headId).innerHTML = outboundData[index-1].package_name + "<small class=''>"+ outboundData[index-1].cities_included +"</small>";
+		document.getElementById(headId).innerHTML = outboundData[index-1].package_name + "<small>"+ outboundData[index-1].cities_included +"</small>";
 		document.getElementById(descId).innerHTML = outboundData[index-1].inclusion;
 		document.getElementById(priceId).innerHTML = outboundData[index-1].price;
+	}
+}
+
+function displayInbound(inboundData){
+	var inboundDataLen = inboundData.length;
+	for(var index = 1;index <= inboundDataLen; index++){
+		var imageId = "pkg_in_img_"+index;
+		var headId = "pkg_in_head_"+index;
+		var descId = "pkg_in_desc_"+index;
+		var priceId = "pkg_in_price_"+index;
+		document.getElementById(imageId).src = "resources/images/pakages/" + inboundData[index-1].image + ".jpg";
+		document.getElementById(headId).innerHTML = inboundData[index-1].package_name + "<small>"+ inboundData[index-1].cities_included +"</small>";
+		document.getElementById(descId).innerHTML = inboundData[index-1].inclusion;
+		document.getElementById(priceId).innerHTML = inboundData[index-1].price;
 	}
 }
