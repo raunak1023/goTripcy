@@ -1578,24 +1578,22 @@
                 </div>
             </div>
             <div class="sectionTrending container">
-                <h2>Popular Hotels</h2>
-                <div class="row image-box hotel listing-style1">
+                <h2>Trending Pakages</h2>
+                <div class="row image-box hotel listing-style1 style3">
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0">
-                                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" height="160" src="http://placehold.it/270x160" alt=""></a>
-                            </figure>
+                            <img id="pkg_trend_img_1" class="pak_img" width="270" height="160" src="" alt=""/>
                             <div class="details">
                                 <span class="price">
-                                    <small>avg/night</small>
-                                    $360
+                                    <small>Starting From</small>
+                                    <label class="fa fa-inr" id="pkg_trend_price_1"></label>
                                 </span>
-                                <h4 class="box-title">Hotel Hilton<small>Paris france</small></h4>
-                                <div class="feedback">
-                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
-                                    <span class="review">270 reviews</span>
+                                <h4 id="pkg_trend_head_1" class="box-title"></h4>
+                                <div class="feedback displayNone">
+                                    <div title="4 stars" class="five-stars-container displayNone" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
+                                    <span class="review displayNone">270 reviews</span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
+                                <p id="pkg_trend_desc_1" class="description"></p>
                                 <div class="action">
                                     <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
                                     <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
@@ -1605,60 +1603,63 @@
                     </div>
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.6">
-                                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" height="160" src="http://placehold.it/270x160" alt=""></a>
-                            </figure>
+                            <img id="pkg_trend_img_2" class="pak_img" width="270" height="160" src="" alt=""/>
                             <div class="details">
-                                <span class="price"><small>avg/night</small>$188</span>
-                                <h4 class="box-title">Forte Do Vale<small>Albufeira</small></h4>
-                                <div class="feedback">
-                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
-                                    <span class="review">170 reviews</span>
+                                <span class="price">
+                                    <small>Starting From</small>
+                                    <label class="fa fa-inr" id="pkg_trend_price_2"></label>
+                                </span>
+                                <h4 id="pkg_trend_head_2" class="box-title"></h4>
+                                <div class="feedback displayNone">
+                                    <div title="4 stars" class="five-stars-container displayNone" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
+                                    <span class="review displayNone">170 reviews</span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
+                                <p id="pkg_trend_desc_2" class="description"></p>
                                 <div class="action">
                                     <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-                                    <a href="#" class="button btn-small yellow popup-map" data-box="37.089072, -8.247880">VIEW ON MAP</a>
+                                    <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
                                 </div>
                             </div>
                         </article>
                     </div>
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="0.9">
-                                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" height="160" src="http://placehold.it/270x160" alt=""></a>
-                            </figure>
+                            <img id="pkg_trend_img_3" class="pak_img" width="270" height="160" src="" alt=""/>
                             <div class="details">
-                                <span class="price"><small>avg/night</small>$322</span>
-                                <h4 class="box-title">Gran Canaria<small>spain</small></h4>
-                                <div class="feedback">
-                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
-                                    <span class="review">485 reviews</span>
+                                <span class="price">
+                                    <small>Starting From</small>
+                                    <label class="fa fa-inr" id="pkg_trend_price_3"></label>
+                                </span>
+                                <h4 id="pkg_trend_head_3" class="box-title"></h4>
+                                <div class="feedback displayNone">
+                                    <div title="4 stars" class="five-stars-container displayNone" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
+                                    <span class="review displayNone">170 reviews</span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
+                                <p id="pkg_trend_desc_3" class="description"></p>
                                 <div class="action">
                                     <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-                                    <a href="#" class="button btn-small yellow popup-map" data-box="40.463667, -3.749220">VIEW ON MAP</a>
+                                    <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
                                 </div>
                             </div>
                         </article>
                     </div>
                     <div class="col-sms-6 col-sm-6 col-md-3">
                         <article class="box">
-                            <figure class="animated" data-animation-type="fadeInDown" data-animation-delay="1.2">
-                                <a class="hover-effect popup-gallery" href="ajax/slideshow-popup.html" title=""><img width="270" height="160" src="http://placehold.it/270x160" alt=""></a>
-                            </figure>
+                            <img id="pkg_trend_img_4" class="pak_img" width="270" height="160" src="" alt=""/>
                             <div class="details">
-                                <span class="price"><small>avg/night</small>$170</span>
-                                <h4 class="box-title">Roosevelt Hotel<small>New york</small></h4>
-                                <div class="feedback">
-                                    <div title="4 stars" class="five-stars-container" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
-                                    <span class="review">75 reviews</span>
+                                <span class="price">
+                                    <small>Starting From</small>
+                                    <label class="fa fa-inr" id="pkg_trend_price_4"></label>
+                                </span>
+                                <h4 id="pkg_trend_head_4" class="box-title"></h4>
+                                <div class="feedback displayNone">
+                                    <div title="4 stars" class="five-stars-container displayNone" data-toggle="tooltip" data-placement="bottom"><span class="five-stars" style="width: 80%;"></span></div>
+                                    <span class="review displayNone">170 reviews</span>
                                 </div>
-                                <p class="description">Nunc cursus libero purus ac congue arcu cursus ut sed vitae pulvinar massa idporta nequetiam.</p>
+                                <p id="pkg_trend_desc_4" class="description"></p>
                                 <div class="action">
                                     <a href="hotel-detailed.html" class="button btn-small">SELECT</a>
-                                    <a href="#" class="button btn-small yellow popup-map" data-box="40.705631, -73.978003">VIEW ON MAP</a>
+                                    <a href="#" class="button btn-small yellow popup-map" data-box="48.856614, 2.352222">VIEW ON MAP</a>
                                 </div>
                             </div>
                         </article>

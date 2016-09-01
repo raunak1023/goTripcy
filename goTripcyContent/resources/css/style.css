@@ -4163,7 +4163,7 @@ ul.check-circle li:before {
   padding: 15px;
 }
 .image-box.style3 .details .box-title {
-  margin-bottom: 0;
+  padding-bottom: 1px;
 }
 .image-box.style3 .details .offers-content {
   font-size: 0.8333em;

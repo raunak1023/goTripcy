@@ -60,6 +60,7 @@ function loadDataToPage(result) {
 	var searchData = result.search;
 	var outboundData = result.outbound;
 	var inboundData = result.inbound;
+	var trendingData = result.trending;
 	var searchDataLen = searchData.length;
 	var going = "<div class='leavingCnt'>";
 	var leaving = "<div class='leavingCnt'>";
@@ -88,7 +89,7 @@ function loadDataToPage(result) {
 	
 	displayOutbound(outboundData);
 	displayInbound(inboundData);
-	
+	displayTrending(trendingData);
 }
 
 function filterAry(inputId, searchType) {
@@ -156,5 +157,19 @@ function displayInbound(inboundData){
 		document.getElementById(headId).innerHTML = inboundData[index-1].package_name + "<small>"+ inboundData[index-1].cities_included +"</small>";
 		document.getElementById(descId).innerHTML = inboundData[index-1].inclusion;
 		document.getElementById(priceId).innerHTML = inboundData[index-1].price;
+	}
+}
+
+function displayTrending(trendingData){
+	var displayTreandingLen = trendingData.length;
+	for(var index = 1;index <= displayTreandingLen; index++){
+		var imageId = "pkg_trend_img_"+index;
+		var headId = "pkg_trend_head_"+index;
+		var descId = "pkg_trend_desc_"+index;
+		var priceId = "pkg_trend_price_"+index;
+		document.getElementById(imageId).src = "resources/images/pakages/" + trendingData[index-1].image + ".jpg";
+		document.getElementById(headId).innerHTML = trendingData[index-1].package_name + "<small>"+ trendingData[index-1].cities_included +"</small>";
+		document.getElementById(descId).innerHTML = trendingData[index-1].inclusion;
+		document.getElementById(priceId).innerHTML = trendingData[index-1].price;
 	}
 }
