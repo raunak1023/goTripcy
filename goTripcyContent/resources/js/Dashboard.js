@@ -51,6 +51,8 @@ function onLoad() {
 	  to_json(workbook);
 	}
 	oReq.send();
+	
+	setInterval(displayBG, 5000); 
 }
 
 var wantToGoAry = new Array();
@@ -67,15 +69,15 @@ function loadDataToPage(result) {
 	var month = "<div class='leavingCnt'>";
 	for(var res = 0;res < searchDataLen; res++){
 		if(searchData[res].Going != undefined){
-			going = going + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"locationSearchInpt\", \""+searchData[res].Going+"\");'>" + searchData[res].Going + "</div></div>";
+			going = going + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"locationSearchInpt\", \""+searchData[res].Going+"\", \"wantToGoContent\");'>" + searchData[res].Going + "</div></div>";
 			wantToGoAry.push(searchData[res].Going);
 		}
 		if(searchData[res].Leaving != undefined){
-			leaving = leaving + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"goingFrmInput\", \""+searchData[res].Leaving+"\");'>" + searchData[res].Leaving + "</div></div>";
+			leaving = leaving + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"goingFrmInput\", \""+searchData[res].Leaving+"\", \"goingFrmContent\");'>" + searchData[res].Leaving + "</div></div>";
 			goingFrmAry.push(searchData[res].Leaving);
 		}
 		if(searchData[res].Month != undefined){
-			month = month + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"monthInput\", \""+searchData[res].Month+"\");'>" + searchData[res].Month + "</div></div>";
+			month = month + "<div class='contentCls'><div class='lableCtnt' onClick='selectVal(\"monthInput\", \""+searchData[res].Month+"\", \"monthContent\");'>" + searchData[res].Month + "</div></div>";
 			monthAry.push(searchData[res].Month);
 		}
 	}
@@ -117,7 +119,7 @@ function syncArray(id, ary, inputId) {
 	var content = "<div class='leavingCnt'>";
 	for(var index = 0;index < aryLen; index++){
 		if(ary[index] != undefined){
-			content = content + "<div class='contentCls'><div class='lableCtnt' onClick ='selectVal(\"" + inputId + "\",\""+ ary[index] +"\")'>" + ary[index] + "</div></div>";
+			content = content + "<div class='contentCls'><div class='lableCtnt' onClick ='selectVal(\"" + inputId + "\",\""+ ary[index] +"\",\""+id+"\" )'>" + ary[index] + "</div></div>";
 		}
 	}
 	content = content + "</div>";
@@ -125,11 +127,12 @@ function syncArray(id, ary, inputId) {
 	contentDOM.innerHTML = '';
 	contentDOM.innerHTML = content;
 }
-function selectVal(id, val) {
+function selectVal(id, val, contentId) {
 	document.getElementById(id).value = val; 
 	if(id == "locationSearchInpt"){
 		searchOnFocus();
 	}
+	document.getElementById(contentId).style.display = 'none';
 }
 
 function displayOutbound(outboundData){
@@ -172,4 +175,44 @@ function displayTrending(trendingData){
 		document.getElementById(descId).innerHTML = trendingData[index-1].inclusion;
 		document.getElementById(priceId).innerHTML = trendingData[index-1].price;
 	}
+}
+var bgIndex = 0;
+function displayBG() {
+	document.getElementById("search-tab-content-id").style.backgroundImage = "url(resources/images/backgroundImages/" + (++bgIndex) + ".jpg)";
+	if(bgIndex >= 5){
+		bgIndex = 0;
+	}
+}
+
+function showDest(){
+	//tjq('searchPanelId').addClass('displayNone');
+	document.getElementById('searchPanelId').style.display = "block"
+	document.getElementById('downArrowDest').style.display = "none"
+	document.getElementById('upArrowDest').style.display = "inline-block"
+}
+
+function hideDest(){
+//	tjq('searchPanelId').removeClass('displayNone');
+	document.getElementById('searchPanelId').style.display = "none"
+	document.getElementById('downArrowDest').style.display = "inline-block"
+	document.getElementById('upArrowDest').style.display = "none"
+}
+
+function showHideQuoteContent() {
+	var imgIconDiv = document.getElementById('helpIconDiv');
+	var quoteContent = document.getElementById('quoteContent');
+	var queryDiv = document.getElementById('queryDiv');
+	var quoteClass = quoteContent.className;
+	if(quoteClass.indexOf('display_None') > 0){
+		quoteContent.className = "col-md-8 col-xs-8 quoteContentDiv";
+		imgIconDiv.className = "col-md-4 col-xs-4";
+		queryDiv.className = "row queryContent quoteContentShow";
+	} else {
+		quoteContent.className = "col-md-6 col-xs-6 display_None quoteContent";
+		imgIconDiv.className = "col-md-12 col-xs-12";
+		queryDiv.className = "row queryContent";
+	}
+}
+
+function sendQuote(){
 }

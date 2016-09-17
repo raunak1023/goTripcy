@@ -1342,7 +1342,7 @@ img.full-width {
 }
 
 .global-map-area {
-  background: url("http://placehold.it/2080x1000") no-repeat;
+  background: url("../images/travelExp.jpg") no-repeat;
 }
 .global-map-area .description p {
   color: #7c9abd;
@@ -1802,7 +1802,7 @@ button.btn-medium, input[type="button"].button.btn-medium, a.button.btn-medium {
 }
 button.btn-small, input[type="button"].button.btn-small, a.button.btn-small {
   height: 28px;
-  padding: 0 29px;
+  padding: 0 28px;
   line-height: 28px;
   font-size: 0.9167em;
 }
@@ -8236,9 +8236,15 @@ ul.search-tabs li.active a {
 
 .search-tab-content {
   min-height: 500px;
-  background-image: url(../images/taj_mahal.jpg);
-  transition: visibility 1s, opacity 0.5s linear;
+  background-image: url(../images/backgroundImages/1.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-animation: myfirst 4s ease-in-out;
+  -webkit-animation-direction: normal;
+  animation: bgImg 4s ease-in-out;
+  animation-direction: normal;
 }
+
 .search-tab-content .tab-pane {
   display: none;
 }

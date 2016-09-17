@@ -13,12 +13,10 @@
     <meta name="author" content="SoapTheme">
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     
     <!-- Theme Styles -->
     <link rel="stylesheet" href="resources/css/bootstrap.min.css">
     <link rel="stylesheet" href="resources/css/font-awesome.min.css">
-    <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="resources/css/animate.min.css">
     
     <!-- Current Page Styles -->
@@ -713,19 +711,16 @@
                         <!-- Slide1 -->
                         <li data-transition="zoomin" data-slotamount="7" data-masterspeed="1500">
                             <!-- MAIN IMAGE -->
-                            <img src="http://placehold.it/2080x646" alt="">
                         </li>
                         
                         <!-- Slide2 -->
                         <li data-transition="zoomout" data-slotamount="7" data-masterspeed="1500">
                             <!-- MAIN IMAGE -->
-                            <img src="http://placehold.it/2080x646" alt="">
                         </li>
                         
                         <!-- Slide3 -->
                         <li data-transition="slidedown" data-slotamount="7" data-masterspeed="1500">
                             <!-- MAIN IMAGE -->
-                            <img src="http://placehold.it/2080x646" alt="">
                         </li>
                     </ul>
                 </div>
@@ -1309,6 +1304,18 @@
             </div>
             
         <section id="content">
+        	<div class="row queryContent" id="queryDiv">
+        		<div id="helpIconDiv" class="col-md-12 col-xs-12">
+        			<img src="resources/images/icon/request-quote.png" class="helpIcon" onclick="showHideQuoteContent();"/>
+        		</div>
+        		<div id="quoteContent" class="col-md-6 col-xs-6 display_None quoteContentDiv">
+        			<span>Get Quote hear !!!</span>
+        			</br>
+        			<input id="userName" type="text" placeholder="Your Name" name="name"></input>
+        			<input id="userNumber" type="text" placeholder="Contact Number" name="number"></input>
+        			<button type="button" onclick="sendQuote();">Get Quote</button>
+        		</div>
+        	</div>
         	<div id="search-tab-content-id" class="search-tab-content">
         		<div id="backgroundOpacityId" class="backgroundOpacity">
         		</div>
@@ -1337,9 +1344,79 @@
 	            <div class="row orContainer">
 	            	<span class="col-md-12 col-xs-12 orTxt">OR</span>
 	            </div>
-	            <div class="row searchByDestContainer">
-	            	<div class="col-md-12 col-xs-12 searchByDest searchByDestIcon">
-	            		<span>Search By Popular Destinations</span>
+	            <div class="row searchByDestContainer" onmouseenter="showDest();" onmouseleave="hideDest();">
+	            	<div class="col-md-12 col-xs-12 searchByDest">
+	            		<img src="resources/images/icon/search_icon.png" class="searchByDestIcon"/>
+	            		<span class="searchDestSpan">Search By Popular Destinations</span>
+	            		<img id="downArrowDest" src="resources/images/icon/down.png" class="searchByDestArrow"/>
+	            		<img id="upArrowDest" src="resources/images/icon/up.png" class="searchByDestArrow display_None"/>
+	            	</div>
+	            </div>
+	            <div id="searchPanelId" class="row searchByDestPanelContainer display_None" onmouseenter="showDest();" onmouseleave="hideDest();">
+	            	<div class="col-md-12 col-xs-12 searchByDestPanel">
+	            		<div class="demoDestSpan">
+	            			<div class="row">
+	            				<div class="col-md-12 col-xs-12">	
+	            					<span>International Trending</span>
+	            				</div>
+	            			</div>
+	            			<div class="row">
+		            			<div class="col-md-3 col-xs-3">
+		            				<span class="pkgLabel">Dubai</span>
+		            			</div>
+		            			<div class="col-md-3 col-xs-3">
+		            				<span class="pkgLabel">Thailand</span>
+		            			</div>
+		            			<div class="col-md-3 col-xs-3">
+		            				<span class="pkgLabel">Singapore</span>
+		            			</div>
+		            			<div class="col-md-3 col-xs-3">
+		            				<span class="pkgLabel">Bali</span>
+		            			</div>
+	            			</div>
+	            		</div>
+	            		<div class="demoDestSpan">
+		            		<div class="row">
+		            				<div class="col-md-12 col-xs-12">	
+		            					<span>Indian Trending</span>
+		            				</div>
+		            			</div>
+		            			<div class="row">
+			            			<div class="col-md-3 col-xs-3">
+			            				<span class="pkgLabel">Kerela</span>
+			            			</div>
+			            			<div class="col-md-3 col-xs-3">
+			            				<span class="pkgLabel">Goa</span>
+			            			</div>
+			            			<div class="col-md-3 col-xs-3">
+			            				<span class="pkgLabel">NE</span>
+			            			</div>
+			            			<div class="col-md-3 col-xs-3">
+			            				<span class="pkgLabel">GT</span>
+			            			</div>
+		            			</div>
+	            		</div>
+	            		<div class="demoDestSpan">
+	            			<div class="row">
+	            				<div class="col-md-12 col-xs-12">	
+	            					<span>Other Trending</span>
+	            				</div>
+	            			</div>
+	            			<div class="row">
+		            			<div class="col-md-3 col-xs-3">
+		            				<span class="pkgLabel">Phuket</span>
+		            			</div>
+		            			<div class="col-md-3 col-xs-3">
+		            				<span class="pkgLabel">Australia</span>
+		            			</div>
+		            			<div class="col-md-3 col-xs-3">
+		            				<span class="pkgLabel">Nepal</span>
+		            			</div>
+		            			<div class="col-md-3 col-xs-3">
+		            				<span class="pkgLabel">Backwater</span>
+		            			</div>
+	            			</div>
+	            		</div>
 	            	</div>
 	            </div>
             </div>
@@ -1535,7 +1612,6 @@
                         <div class="col-md-4">
                             <article class="box animated" data-animation-type="fadeInUp">
                                 <figure class="middle-block">
-                                    <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172" />
                                     <span class="opacity-wrapper"></span>
                                 </figure>
                                 <div class="details">
@@ -1549,7 +1625,6 @@
                         <div class="col-md-4">
                             <article class="box animated" data-animation-type="fadeInUp">
                                 <figure class="middle-block">
-                                    <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172" />
                                     <span class="opacity-wrapper"></span>
                                 </figure>
                                 <div class="details">
@@ -1563,7 +1638,6 @@
                         <div class="col-md-4">
                             <article class="box animated" data-animation-type="fadeInUp">
                                 <figure class="middle-block">
-                                    <img src="http://placehold.it/100x172" alt="" class="middle-item" width="100" height="172" />
                                     <span class="opacity-wrapper"></span>
                                 </figure>
                                 <div class="details">
@@ -1690,7 +1764,6 @@
                         </div>
                     </div>
                     <div class="image-container col-sm-4">
-                        <img src="http://placehold.it/342x258" alt="" width="342" height="258" class="animated" data-animation-type="fadeInUp" />
                     </div>
                 </div>
             </div>
@@ -1723,7 +1796,6 @@
                                 <li>
                                     <div class="thumb">
                                         <a href="#">
-                                            <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
                                         </a>
                                     </div>
                                     <div class="description">
@@ -1735,7 +1807,6 @@
                                 <li>
                                     <div class="thumb">
                                         <a href="#">
-                                            <img src="http://placehold.it/63x63" alt="" width="63" height="63" />
                                         </a>
                                     </div>
                                     <div class="description">
