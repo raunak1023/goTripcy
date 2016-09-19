@@ -215,4 +215,13 @@ function showHideQuoteContent() {
 }
 
 function sendQuote(){
+	var userName = document.getElementById('userName').value;
+	var userNumber = document.getElementById('userNumber').value;
+	tjq.ajax({
+		type: "POST",
+		url: contextPath + "/handleServlet",
+		data: 'userName='+userName+'&userNumber='+userNumber+'&processAction=sendMail',
+		success: function(result){
+        alert('done');
+    }});
 }

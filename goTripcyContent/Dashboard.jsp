@@ -51,6 +51,9 @@
       <script type='text/javascript' src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
       <script type='text/javascript' src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.js"></script>
     <![endif]-->
+    <script type="text/javascript">
+    var contextPath='<%=request.getContextPath()%>';
+    </script>
 </head>
 <body onload="onLoad();">
     
@@ -59,7 +62,7 @@
             <div class="topnav hidden-xs">
                 <div class="container">
                     <ul class="quick-menu pull-left">
-                        <li><a href="#">MY ACCOUNT</a></li>
+                        <!-- <li><a href="#">MY ACCOUNT</a></li>
                         <li class="ribbon">
                             <a href="#">English</a>
                             <ul class="menu mini">
@@ -77,10 +80,11 @@
                                 <li><a href="#" title="Suomi">Suomi</a></li>
                                 <li><a href="#" title="Svenska">Svenska</a></li>
                             </ul>
-                        </li>
+                        </li> -->
+                        
                     </ul>
                     <ul class="quick-menu pull-right">
-                        <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
+                        <!-- <li><a href="#travelo-login" class="soap-popupbox">LOGIN</a></li>
                         <li><a href="#travelo-signup" class="soap-popupbox">SIGNUP</a></li>
                         <li class="ribbon currency">
                             <a href="#" title="">USD</a>
@@ -99,7 +103,8 @@
                                 <li><a href="#" title="HUF">HUF</a></li>
                                 <li><a href="#" title="IDR">IDR</a></li>
                             </ul>
-                        </li>
+                        </li> -->
+                        <li><a href="#travelo-login" class="soap-popupbox" style="font-size: 14px;">Contact us on: 9990802115</a></li>
                     </ul>
                 </div>
             </div>
@@ -1304,18 +1309,20 @@
             </div>
             
         <section id="content">
-        	<div class="row queryContent" id="queryDiv">
-        		<div id="helpIconDiv" class="col-md-12 col-xs-12">
-        			<img src="resources/images/icon/request-quote.png" class="helpIcon" onclick="showHideQuoteContent();"/>
-        		</div>
-        		<div id="quoteContent" class="col-md-6 col-xs-6 display_None quoteContentDiv">
-        			<span>Get Quote hear !!!</span>
-        			</br>
-        			<input id="userName" type="text" placeholder="Your Name" name="name"></input>
-        			<input id="userNumber" type="text" placeholder="Contact Number" name="number"></input>
-        			<button type="button" onclick="sendQuote();">Get Quote</button>
-        		</div>
-        	</div>
+        	<form action="/handleServlet">
+	        	<div class="row queryContent" id="queryDiv">
+	        		<div id="helpIconDiv" class="col-md-12 col-xs-12">
+	        			<img src="resources/images/icon/request-quote.png" class="helpIcon" onclick="showHideQuoteContent();"/>
+	        		</div>
+	        		<div id="quoteContent" class="col-md-6 col-xs-6 display_None quoteContentDiv">
+	        			<span>Get Quote hear !!!</span>
+	        			</br>
+	        			<input id="userName" name="userName" type="text" placeholder="Your Name" name="name"></input>
+	        			<input id="userNumber" name="userNumber" type="text" placeholder="Contact Number" name="number"></input>
+	        			<button type="button" onclick="sendQuote();">Get Quote</button>
+	        		</div>
+	        	</div>
+        	</form>
         	<div id="search-tab-content-id" class="search-tab-content">
         		<div id="backgroundOpacityId" class="backgroundOpacity">
         		</div>
@@ -1776,18 +1783,18 @@
                         <div class="col-sm-6 col-md-3">
                             <h2>Discover</h2>
                             <ul class="discover triangle hover row">
-                                <li class="col-xs-6"><a href="#">Safety</a></li>
                                 <li class="col-xs-6"><a href="#">About</a></li>
-                                <li class="col-xs-6"><a href="#">Travelo Picks</a></li>
-                                <li class="col-xs-6"><a href="#">Latest Jobs</a></li>
-                                <li class="active col-xs-6"><a href="#">Mobile</a></li>
-                                <li class="col-xs-6"><a href="#">Press Releases</a></li>
-                                <li class="col-xs-6"><a href="#">Why Host</a></li>
-                                <li class="col-xs-6"><a href="#">Blog Posts</a></li>
-                                <li class="col-xs-6"><a href="#">Social Connect</a></li>
-                                <li class="col-xs-6"><a href="#">Help Topics</a></li>
+                                <li class="col-xs-6"><a href="#">Term & Condition</a></li>
+                                <li class="col-xs-6"><a href="#">Why Choose us</a></li>
+                                <li class="col-xs-6"><a href="#">Privacy Policy</a></li>
+                                <li class="active col-xs-6"><a href="#">Enquiry</a></li>
                                 <li class="col-xs-6"><a href="#">Site Map</a></li>
-                                <li class="col-xs-6"><a href="#">Policies</a></li>
+                                <li class="col-xs-6"><a href="#">Visa & Forex</a></li>
+                                <li class="col-xs-6"><a href="#">Social</a></li>
+                                <li class="col-xs-6"><a href="#">Blog</a></li>
+                                <!-- <li class="col-xs-6"><a href="#">Help Topics</a></li>
+                                <li class="col-xs-6"><a href="#">Site Map</a></li>
+                                <li class="col-xs-6"><a href="#">Policies</a></li> -->
                             </ul>
                         </div>
                         <div class="col-sm-6 col-md-3">
