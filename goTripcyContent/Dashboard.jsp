@@ -823,7 +823,7 @@
                                     
                                     <div class="form-group col-sm-6 col-md-2 fixheight">
                                         <label class="hidden-xs">&nbsp;</label>
-                                        <button type="submit" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">SEARCH NOW</button>
+                                        <button type="button" onclick="" class="full-width icon-check animated" data-animation-type="bounce" data-animation-duration="1">SEARCH NOW</button>
                                     </div>
                                 </div>
                             </form>
@@ -1345,7 +1345,7 @@
 	          			<div class="monthContent" id="monthContent" onmouseout="hideDiv('monthContent', 'monthDD');" onmouseover="showDiv('monthContent', 'monthDD')"></div>
 	          		</div>
 	          		<div class="col-md-2 col-xs-3">
-	          			<button class="searchIcon"></button>
+	          			<button class="searchIcon" onclick="getSearchResults()"></button>
 	          		</div>
 	            </div>
 	            <div class="row orContainer">

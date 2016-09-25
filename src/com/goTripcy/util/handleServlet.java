@@ -36,7 +36,6 @@ public class handleServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		String processAction = request.getParameter("processAction");
 		if(null != processAction) {
 			if("sendMail".equalsIgnoreCase(processAction)) {

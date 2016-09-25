@@ -225,3 +225,8 @@ function sendQuote(){
         alert('done');
     }});
 }
+
+function getSearchResults() {
+	var locationSearch = document.getElementById("locationSearchInpt").value;
+	window.location.href = "./resources/html/search-results.html?search="+locationSearch+"";
+}
