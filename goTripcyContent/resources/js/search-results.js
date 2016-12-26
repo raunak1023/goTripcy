@@ -119,5 +119,5 @@ function loadSearchResults(result) {
 }
 
 function changeDet(dd, ary) {
-	console.log(tjq(dd));
+	console.log(tjq(dd).val());
 }
